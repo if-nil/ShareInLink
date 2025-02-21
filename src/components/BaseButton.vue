@@ -38,11 +38,11 @@ defineProps({
 }
 
 .base-button--primary {
-  background-color: #1a73e8;
+  background-color: #4670d9;
 }
 
 .base-button--primary:hover {
-  background-color: #1557b0;
+  background-color: #3a5dba;
 }
 
 .base-button--success {

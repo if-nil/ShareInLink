@@ -1,8 +1,8 @@
-# Markdown 编辑器与预览
+# Local Share
 
 [English](README.md) | 中文
 
-一个简单但功能强大的 Markdown 编辑器，具有实时预览功能。
+一个安全的 Markdown 编辑器，支持本地分享。所有内容都存储在 URL hash 中，让分享变得简单的同时确保数据留在浏览器中。
 
 ## 功能特点
 

@@ -8,7 +8,7 @@ import { useRoute } from 'vue-router'
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string'
 
 const route = useRoute()
-const code = ref('# Welcome to Markdown Editor\n\nStart writing your document here...')
+const code = ref('# Welcome to Local Share\n\nStart writing your document here...')
 const markdownPreviewRef = ref(null)
 const toast = ref(null)
 
@@ -71,7 +71,7 @@ const baseUrl = window.location.origin
   <div class="editor-container">
     <div class="panel code-panel">
       <div class="panel-header">
-        <span>代码编辑器</span>
+        <span>编辑器</span>
         <BaseButton type="primary" @click="handleSave">保存</BaseButton>
       </div>
       <div class="content-container">

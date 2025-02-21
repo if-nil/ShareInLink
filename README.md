@@ -1,8 +1,8 @@
-# Markdown Editor & Preview
+# Local Share
 
 English | [中文](README_ZH.md)
 
-A simple yet powerful Markdown editor with real-time preview functionality.
+A secure Markdown editor for local sharing. All content is stored in URL hash, making sharing simple while keeping your data in the browser.
 
 ## Features
 
