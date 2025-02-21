@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import { marked } from 'marked'
 import { useRouter } from 'vue-router'
 import { decompressFromEncodedURIComponent } from 'lz-string'
+import BaseButton from '../components/BaseButton.vue'
 
 const router = useRouter()
 const content = ref('')
@@ -37,7 +38,7 @@ const handleEdit = () => {
   <div class="preview-page">
     <div class="preview-content" v-html="decodedContent"></div>
     <div class="preview-footer">
-      <button class="edit-button" @click="handleEdit">编辑此文档</button>
+      <BaseButton type="primary" @click="handleEdit">编辑此文档</BaseButton>
     </div>
   </div>
 </template>
@@ -63,23 +64,6 @@ const handleEdit = () => {
   text-align: center;
   border-radius: 0 0 8px 8px;
   border-top: 1px solid #eee;
-}
-
-.edit-button {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #1a73e8;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background-color 0.2s;
-  border: none;
-  cursor: pointer;
-}
-
-.edit-button:hover {
-  background-color: #1557b0;
 }
 
 /* Markdown 内容样式 */

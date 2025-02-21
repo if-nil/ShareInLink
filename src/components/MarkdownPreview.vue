@@ -3,6 +3,7 @@ import { marked } from 'marked'
 import { computed, ref } from 'vue'
 import Toast from './Toast.vue'
 import { compressToEncodedURIComponent } from 'lz-string'
+import BaseButton from './BaseButton.vue'
 
 const props = defineProps({
   content: {
@@ -12,6 +13,10 @@ const props = defineProps({
   baseUrl: {
     type: String,
     required: true,
+  },
+  customClass: {
+    type: String,
+    default: '',
   },
 })
 
@@ -60,7 +65,7 @@ const openPreview = () => {
 </script>
 
 <template>
-  <div class="markdown-preview">
+  <div class="markdown-preview" :class="customClass">
     <div v-html="htmlContent" class="markdown-content"></div>
 
     <!-- 分享对话框 -->
@@ -73,8 +78,8 @@ const openPreview = () => {
         <div class="modal-body">
           <div class="share-link-container">
             <input type="text" :value="shareLink" readonly class="share-link-input" />
-            <button class="copy-button" @click="copyLink">复制链接</button>
-            <button class="preview-button" @click="openPreview">预览</button>
+            <BaseButton type="primary" @click="copyLink">复制链接</BaseButton>
+            <BaseButton type="success" @click="openPreview">预览</BaseButton>
           </div>
         </div>
       </div>
@@ -159,33 +164,6 @@ const openPreview = () => {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
-}
-
-.copy-button,
-.preview-button {
-  padding: 8px 16px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.copy-button {
-  background-color: #1a73e8;
-}
-
-.copy-button:hover {
-  background-color: #1557b0;
-}
-
-.preview-button {
-  background-color: #34a853;
-}
-
-.preview-button:hover {
-  background-color: #2d9147;
 }
 
 .markdown-content :deep(h1) {

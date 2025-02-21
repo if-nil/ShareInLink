@@ -2,6 +2,7 @@
 import CodeEditor from '../components/CodeEditor.vue'
 import MarkdownPreview from '../components/MarkdownPreview.vue'
 import Toast from '../components/Toast.vue'
+import BaseButton from '../components/BaseButton.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string'
@@ -71,7 +72,7 @@ const baseUrl = window.location.origin
     <div class="panel code-panel">
       <div class="panel-header">
         <span>代码编辑器</span>
-        <button class="save-button" @click="handleSave">保存</button>
+        <BaseButton type="primary" @click="handleSave">保存</BaseButton>
       </div>
       <div class="content-container">
         <CodeEditor class="code-editor" @update:code="handleCodeChange" :model-value="code" />
@@ -80,12 +81,12 @@ const baseUrl = window.location.origin
     <div class="panel preview-panel">
       <div class="panel-header">
         <span>预览</span>
-        <button class="share-button" @click="handleShare">分享</button>
+        <BaseButton type="success" @click="handleShare">分享</BaseButton>
       </div>
       <div class="content-container">
         <MarkdownPreview
           ref="markdownPreviewRef"
-          class="preview"
+          custom-class="preview"
           :content="code"
           :base-url="baseUrl"
         />
@@ -103,6 +104,35 @@ const baseUrl = window.location.origin
   gap: 20px;
   flex: 1;
   min-height: 0;
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+  .editor-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    padding-bottom: 20px; /* 增加底部边距 */
+  }
+
+  .panel {
+    min-height: 40vh; /* 调整为更合适的高度 */
+    max-height: 50vh; /* 限制最大高度 */
+  }
+
+  .content-container {
+    padding: 12px;
+  }
+
+  .panel-header {
+    padding: 0 12px;
+    height: 40px;
+  }
+
+  /* 最后一个面板添加底部边距 */
+  .panel:last-child {
+    margin-bottom: 12px;
+  }
 }
 
 .panel {
@@ -145,39 +175,6 @@ const baseUrl = window.location.origin
   color: #000;
 }
 
-.share-button {
-  padding: 6px 12px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: background-color 0.2s;
-  line-height: 1.4;
-}
-
-.share-button:hover {
-  background-color: #45a049;
-}
-
-.save-button {
-  padding: 6px 12px;
-  background-color: #1a73e8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: background-color 0.2s;
-  line-height: 1.4;
-}
-
-.save-button:hover {
-  background-color: #1557b0;
-}
-
-/* 调整按钮间距 */
 .panel-header button {
   margin-left: 8px;
 }
