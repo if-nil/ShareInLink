@@ -35,7 +35,7 @@
 
 ```bash
 # 克隆仓库
-git clone [your-repo-url]
+git clone https://github.com/if-nil/sth-preview.git
 
 # 安装依赖
 pnpm install

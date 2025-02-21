@@ -32,7 +32,7 @@ A simple yet powerful Markdown editor with real-time preview functionality.
 
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/if-nil/sth-preview.git
 
 # Install dependencies
 pnpm install
