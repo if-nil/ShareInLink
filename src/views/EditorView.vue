@@ -3,14 +3,19 @@ import CodeEditor from '../components/CodeEditor.vue'
 import MarkdownPreview from '../components/MarkdownPreview.vue'
 import Toast from '../components/Toast.vue'
 import BaseButton from '../components/BaseButton.vue'
+import GithubIcon from '../components/icons/GithubIcon.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string'
+import { defaultContent } from '../config/defaultContent'
 
 const route = useRoute()
-const code = ref('# Welcome to ShareInLink\n\nStart writing your document here...')
+const userLang = navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+const code = ref(defaultContent[userLang])
 const markdownPreviewRef = ref(null)
 const toast = ref(null)
+
+const GITHUB_URL = 'https://github.com/if-nil/ShareInLink'
 
 const showToast = (message) => {
   toast.value = {
@@ -71,8 +76,16 @@ const baseUrl = window.location.origin
   <div class="editor-container">
     <div class="panel code-panel">
       <div class="panel-header">
-        <span>编辑器</span>
-        <BaseButton type="primary" @click="handleSave">保存</BaseButton>
+        <div class="header-left">
+          <span>编辑器</span>
+        </div>
+        <div class="header-right">
+          <a :href="GITHUB_URL" target="_blank" class="github-link" title="Star on GitHub">
+            <GithubIcon />
+            <span class="github-text">Star</span>
+          </a>
+          <BaseButton type="primary" @click="handleSave">保存</BaseButton>
+        </div>
       </div>
       <div class="content-container">
         <CodeEditor class="code-editor" @update:code="handleCodeChange" :model-value="code" />
@@ -133,6 +146,14 @@ const baseUrl = window.location.origin
   .panel:last-child {
     margin-bottom: 12px;
   }
+
+  .github-text {
+    display: none; /* 在移动端隐藏文字 */
+  }
+
+  .header-right {
+    gap: 8px;
+  }
 }
 
 .panel {
@@ -177,5 +198,39 @@ const baseUrl = window.location.origin
 
 .panel-header button {
   margin-left: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.github-link:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.github-text {
+  font-size: 13px;
 }
 </style>
