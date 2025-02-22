@@ -1,14 +1,14 @@
 <p align="center">
   <a href="https://github.com/if-nil/reapi" target="_blank" rel="noopener noreferrer">
-    <img width="280" src="https://raw.githubusercontent.com/if-nil/LocalShare/refs/heads/main/public/logo.svg" alt="ReAPI logo">
+    <img width="280" src="https://raw.githubusercontent.com/if-nil/ShareInLink/refs/heads/main/public/logo.svg" alt="ShareInLink logo">
   </a>
 </p>
 
 [English](README.md) | 中文
 
-# Local Share
+# ShareInLink
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/beb2e1a6-117d-4e44-b705-f92b2b4f13eb/deploy-status)](https://app.netlify.com/sites/local-share/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/beb2e1a6-117d-4e44-b705-f92b2b4f13eb/deploy-status)](https://app.netlify.com/sites/share-in-link/deploys)
 
 一个安全的 Markdown 编辑器，支持本地分享。所有内容都存储在 URL hash 中，让分享变得简单的同时确保数据留在浏览器中。
 

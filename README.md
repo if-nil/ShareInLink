@@ -1,14 +1,14 @@
 <p align="center">
   <a href="https://github.com/if-nil/reapi" target="_blank" rel="noopener noreferrer">
-    <img width="280" src="https://raw.githubusercontent.com/if-nil/LocalShare/refs/heads/main/public/logo.svg" alt="ReAPI logo">
+    <img width="280" src="https://raw.githubusercontent.com/if-nil/ShareInLink/refs/heads/main/public/logo.svg" alt="ShareInLink logo">
   </a>
 </p>
 
 English | [中文](README_ZH.md)
 
-# Local Share
+# ShareInLink
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/beb2e1a6-117d-4e44-b705-f92b2b4f13eb/deploy-status)](https://app.netlify.com/sites/local-share/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/beb2e1a6-117d-4e44-b705-f92b2b4f13eb/deploy-status)](https://app.netlify.com/sites/share-in-link/deploys)
 
 A secure Markdown editor for local sharing. All content is stored in URL hash, making sharing simple while keeping your data in the browser.
 

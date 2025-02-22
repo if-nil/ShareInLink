@@ -8,7 +8,7 @@ import { useRoute } from 'vue-router'
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string'
 
 const route = useRoute()
-const code = ref('# Welcome to Local Share\n\nStart writing your document here...')
+const code = ref('# Welcome to ShareInLink\n\nStart writing your document here...')
 const markdownPreviewRef = ref(null)
 const toast = ref(null)
 
