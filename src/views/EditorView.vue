@@ -4,6 +4,7 @@ import MarkdownPreview from '../components/MarkdownPreview.vue'
 import Toast from '../components/Toast.vue'
 import BaseButton from '../components/BaseButton.vue'
 import GithubIcon from '../components/icons/GithubIcon.vue'
+import LanguageSelect from '../components/LanguageSelect.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string'
@@ -14,6 +15,7 @@ const userLang = navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'
 const code = ref(defaultContent[userLang])
 const markdownPreviewRef = ref(null)
 const toast = ref(null)
+const selectedLanguage = ref('markdown')
 
 const GITHUB_URL = 'https://github.com/if-nil/ShareInLink'
 
@@ -78,6 +80,7 @@ const baseUrl = window.location.origin
       <div class="panel-header">
         <div class="header-left">
           <span>编辑器</span>
+          <LanguageSelect v-model="selectedLanguage" />
         </div>
         <div class="header-right">
           <a :href="GITHUB_URL" target="_blank" class="github-link" title="Star on GitHub">
