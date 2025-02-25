@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/if-nil/reapi" target="_blank" rel="noopener noreferrer">
+  <a href="https://github.com/if-nil/ShareInLink" target="_blank" rel="noopener noreferrer">
     <img width="350" src="https://raw.githubusercontent.com/if-nil/ShareInLink/refs/heads/main/public/logo.svg" alt="ShareInLink logo">
   </a>
 </p>
